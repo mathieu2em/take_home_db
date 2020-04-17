@@ -51,7 +51,7 @@ sum_sum2 as (SELECT trimc, SUM(sum_pond) OVER (ORDER BY trimc) as sum_prods
 
 -- resultat de la division
 cumu as (SELECT trimc,'MoyCum' AS sigle, 'Moyenne cumulative' AS titre,
-                sum_tc AS cred, CAST(CAST(sum_prods/sum_tc AS DECIMAL(10,3)) AS CHAR (5)) AS note FROM sum_sum NATURAL JOIN sum_cred NATURAL JOIN sum_sum2 ORDER BY trimc),
+                sum_tc AS cred, CAST(CAST(sum_prods/sum_tc AS DECIMAL(100,3)) AS CHAR (5)) AS note FROM sum_sum NATURAL JOIN sum_cred NATURAL JOIN sum_sum2 ORDER BY trimc),
 
 -- moyenne trimestrielle
 tab_moy   as (SELECT trimc, sum(cred) AS sumcred, sum(valeur*cred)/sum(cred) AS moy
