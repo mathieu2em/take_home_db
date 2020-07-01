@@ -33,9 +33,9 @@ ON notes
 FOR EACH ROW
 EXECUTE PROCEDURE log_change();
 
-update notesinfo set note='A'
-where  sigle='IFT3911' and matricule='53357' and trimc='20114';
-select * from notesinfo where matricule='53357';
-select * from log_notes;
+UPDATE notesinfo SET note='A'
+WHERE  sigle='IFT3911' AND matricule='53357' AND trimc='20114';
+SELECT * FROM notesinfo WHERE matricule='53357';
+SELECT * FROM log_notes;
 rollback;
 
